@@ -5,8 +5,8 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    line-height: 1.3;
 }
-
 
 .container {
     height: 100vh;
@@ -20,9 +20,20 @@
 
 .header,
 .sidebar,
-.main-container {
+.main-container,
+.header-top,
+.header-bottom,
+.articles,
+.main-sidebar-container,
+.main-headings,
+.content-container {
     display: grid;
-    padding: 1rem;
+}
+
+.header,
+.sidebar,
+.main-container {
+    padding: 1.5rem;
 }
 
 .header {
@@ -30,12 +41,69 @@
     grid-area: header;
 }
 
+.header ul {
+    display: flex;
+}
+
 .sidebar {
     background-color: blue;
     grid-area: sidebar;
 }
 
+.header-top {
+    grid-template-columns: 1fr 7fr 2fr 1fr 3fr;
+}
+
+.header-bottom {
+    grid-template-columns: 1fr 3fr repeat(4, 1fr);
+}
+
 .main-container {
     background-color: pink;
     grid-area: main;
+    grid-template-rows: 2rem 5fr;
+    grid-template-areas: 
+        "heading heading"
+        "main sidebar"
+        ;
+    gap: 1rem;
+    padding-bottom: 4rem;
+    border: 2px solid red;
+}
+
+.main-headings {
+    grid-area: heading;
+    grid-template-columns: 70% 30%;
+    height: 100%;
+    align-content: end;
+    border: 2px solid purple;
+}
+
+.articles {
+    gap: 2rem;
+    grid-template: repeat(3, 1fr)/1fr 1fr;
+    border: 2px solid chartreuse;
+}
+
+article {
+    background-color: white;
+    padding: 1rem;
+    border-left: 8px solid orange;
+    border-radius: 7px;
+}
+
+article * {
+    color: blue;
+}
+
+.content-container {
+    padding: 0;
+    grid-template-columns: 70% 30%;
+    border: 3px solid black;
+}
+
+.main-sidebar-container {
+    gap: 2rem;
+    border: 3px solid orange;
+    padding: 1rem;
 }
