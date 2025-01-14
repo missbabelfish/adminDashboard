@@ -13,7 +13,7 @@
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template: 1fr 4fr/22% 4fr;
+    grid-template: 1fr 8fr/22% 4fr;
     grid-template-areas:
     "sidebar header"
     "sidebar main"
@@ -25,6 +25,7 @@
 .secondary-nav,
 .main-container,
 .header-top,
+.notif-avatar-user,
 .header-bottom,
 .articles,
 .main-sidebar-container,
@@ -40,12 +41,18 @@
 }
 
 .header {
-    background-color: aqua;
+    background-color: rgb(244, 251, 250);
     grid-area: header;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
+.header svg {
+    height: 1.5rem;
 }
 
 .header * {
-    border: 2px solid orange;
+    color: rgb(66, 65, 65);
 }
 
 .header ul {
@@ -53,16 +60,71 @@
 }
 
 .header-top {
-    grid-template-columns: 1fr 7fr 2fr 1fr 3fr;
+    grid-template-columns: 1fr 7fr 5fr;
+    align-items: center;
+}
+
+input {
+    background-color: rgb(228, 228, 228);
+    border: none;
+    border-radius: 16px;
+    height: 2rem;
+}
+
+.notif-avatar-user {
+    grid-template-columns: 1fr 1fr 3fr;
+    justify-items: end;
+    align-items: center;
+}
+
+#avatar-small {
+    height: 3rem;
+    fill: rgb(17, 101, 120);
+    background-color: rgb(249, 211, 139);
+    border-radius: 50%;
+    padding: .5rem;
+}
+
+#avatar-medium {
+    height: 4rem;
+    padding: 0;
+    place-self: center center;
+}
+
+.notif-avatar-user h4 {
+    place-self: center start;
+    margin-left: 1rem;
 }
 
 .header-bottom {
-    grid-template-columns: 1fr 3fr repeat(4, 1fr);
+    grid-template-columns: 1fr 3fr 4fr;
+    align-items: center;
+}
+
+.header-bottom nav {
+    /* place-self: center end; */
+    padding-left: 2rem;
+}
+
+.post-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.post-nav li {
+    align-content: center;
+    text-align: center;
+    background-color: rgb(17, 101, 120);
+    border-radius: 16px;
+    color: rgb(234, 234, 234);
+    height: 2rem;
+    width: 12ch;
 }
 
 .sidebar {
-    background-color: blue;
-    border: 2px solid chartreuse;
+    background-color: rgb(17, 101, 120);
     height: 100%;
     grid-area: sidebar;
     grid-template-rows: 1fr 8fr 8fr;
@@ -108,7 +170,7 @@
 }
 
 .main-container {
-    background-color: pink;
+    background-color: rgb(212, 212, 212);
     grid-area: main;
     grid-template-rows: 2rem 5fr;
     grid-template-areas: 
@@ -122,6 +184,7 @@
 
 
 .main-headings {
+    color: rgb(66, 65, 65);
     grid-area: heading;
     grid-template-columns: 70% 30%;
     height: 100%;
