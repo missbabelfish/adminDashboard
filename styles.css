@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    text-decoration: none;
     line-height: 1.3;
 }
 
@@ -20,6 +21,8 @@
 
 .header,
 .sidebar,
+.main-nav, 
+.secondary-nav,
 .main-container,
 .header-top,
 .header-bottom,
@@ -41,13 +44,12 @@
     grid-area: header;
 }
 
-.header ul {
-    display: flex;
+.header * {
+    border: 2px solid orange;
 }
 
-.sidebar {
-    background-color: blue;
-    grid-area: sidebar;
+.header ul {
+    display: flex;
 }
 
 .header-top {
@@ -56,6 +58,53 @@
 
 .header-bottom {
     grid-template-columns: 1fr 3fr repeat(4, 1fr);
+}
+
+.sidebar {
+    background-color: blue;
+    border: 2px solid chartreuse;
+    height: 100%;
+    grid-area: sidebar;
+    grid-template-rows: 1fr 8fr 8fr;
+    padding-top: 1rem;
+}
+
+.page-logo {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-logo h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#logo {
+    height: 2.5rem;
+}
+
+.sidebar a {
+    color: white;
+    display: grid;
+    font-size: 1.5rem;
+    grid-template-columns: 1fr 4fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.sidebar svg {
+    fill: white;
+    height: 1.75rem;
+}
+
+.main-nav ul,
+.secondary-nav ul {
+    display: grid;
+    align-content: start;
+    gap: 1.25rem;
 }
 
 .main-container {
@@ -68,8 +117,9 @@
         ;
     gap: 1rem;
     padding-bottom: 4rem;
-    border: 2px solid red;
 }
+
+
 
 .main-headings {
     grid-area: heading;
@@ -82,6 +132,7 @@
 .articles {
     gap: 2rem;
     grid-template: repeat(3, 1fr)/1fr 1fr;
+    height: 100%;
     border: 2px solid chartreuse;
 }
 
@@ -107,3 +158,4 @@ article * {
     border: 3px solid orange;
     padding: 1rem;
 }
+
