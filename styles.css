@@ -30,7 +30,10 @@
 .articles,
 .main-sidebar-container,
 .main-headings,
-.content-container {
+.content-container,
+.announcements,
+.trending,
+.trending-card {
     display: grid;
 }
 
@@ -78,7 +81,7 @@ input {
 }
 
 #avatar-small {
-    height: 3rem;
+    height: 2.5rem;
     fill: rgb(17, 101, 120);
     background-color: rgb(249, 211, 139);
     border-radius: 50%;
@@ -109,7 +112,6 @@ input {
 .post-nav ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
     justify-content: center;
 }
 
@@ -181,44 +183,90 @@ input {
     padding-bottom: 4rem;
 }
 
-
+.main-container * {
+    /* height: 80%; */
+    color: rgb(66, 65, 65);
+}
 
 .main-headings {
-    color: rgb(66, 65, 65);
     grid-area: heading;
     grid-template-columns: 70% 30%;
     height: 100%;
     align-content: end;
-    border: 2px solid purple;
 }
 
 .articles {
-    gap: 2rem;
+    gap: 1.5rem;
     grid-template: repeat(3, 1fr)/1fr 1fr;
     height: 100%;
-    border: 2px solid chartreuse;
 }
 
 article {
     background-color: white;
     padding: 1rem;
-    border-left: 8px solid orange;
+    border-left: 8px solid rgb(249, 211, 139);
     border-radius: 7px;
 }
 
-article * {
-    color: blue;
+.article-links ul {
+    display: flex;
+    justify-content: end;
+    gap: 1.5rem;
+    margin-top: 5rem;
+}
+
+.article-links svg {
+    height: 1.25rem;
 }
 
 .content-container {
+    height: 100%;
     padding: 0;
     grid-template-columns: 70% 30%;
-    border: 3px solid black;
 }
 
 .main-sidebar-container {
     gap: 2rem;
-    border: 3px solid orange;
-    padding: 1rem;
+    padding-left: 2rem;
 }
 
+.announcements, 
+.trending {
+    background-color: white;
+    border-radius: 7px;
+    padding: 2rem;
+    font-size: .75rem;
+}
+
+.announcement:last-child {
+    border: none;
+}
+
+.announcement {
+    border-bottom: 1px solid gray;
+    padding: 1rem 0;
+}
+
+.trending {
+    margin-top: 1rem;
+    height: 92%;
+    gap: 1rem;
+    grid-template-rows: repeat(4fr);
+    align-items: space-between;
+}
+
+.trending-card {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 4fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.avatar-small {
+    height: 2.5rem;
+    fill: rgb(17, 101, 120);
+    background-color: rgb(249, 211, 139);
+    border-radius: 50%;
+    padding: .5rem;
+}
